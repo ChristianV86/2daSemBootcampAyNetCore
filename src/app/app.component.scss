@@ -1,0 +1,25 @@
+.container-principal {
+    padding: 20px;
+    width: 80%;    
+    margin: 10px auto;  
+    display: flex;
+    flex-direction: column;
+    border: 2px solid red;
+    .title-principal {
+        margin: 0;
+        color: crimson;
+        font-family: 'Poppins', sans-serif, Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        font-size: 50px;
+        text-shadow: 2px 5px 10px #5a5959;
+    }
+    h2 {
+        color: red;
+        text-align: left;
+        margin: 5px;
+    }
+    p {
+        text-align: left;
+        margin: 5px;
+    }
+}

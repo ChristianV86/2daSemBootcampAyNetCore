@@ -1,0 +1,22 @@
+<div class="container-listado">
+    <p>Este contenido pertenece al componente <strong>listado.component.ts</strong></p>
+
+    <h1>Listado de Empleados</h1>
+
+    <ul>
+        <li *ngFor="let emp of empleados">
+            <h3>Nombre Empleado</h3>
+            <h4>
+                {{emp.nombres}} {{emp.apellidos}}
+            </h4>
+            <h3>Dirección</h3>
+            <h4>{{emp.direccion.tipoVia}} {{emp.direccion.numeroVia}} # {{emp.direccion.numeroCasa}} / Barrio: {{emp.direccion.barrio}} Ciudad: {{emp.direccion.ciudad}}</h4>
+            <h3>Sueldo</h3>
+            <h4>${{emp.sueldo}}</h4>
+        </li>
+    </ul>
+</div>
+
+
+
+
