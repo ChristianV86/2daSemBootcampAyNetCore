@@ -1,1 +1,14 @@
-<p>empleado works!</p>
+<div class="container-empleado centrado">
+
+    <p style="text-align: center;">
+        Este es el componente padre de <strong>app.listado.component.ts</strong>
+    </p>
+
+    <div class="container-listado centrado">
+        <!-- llamamos al selector del componente hijo (listado.component.ts) en el cual creamos el contenido html con la informacion de los empleados por medio de interpolacion, la cual logramos porque en este componente importamos la interfaz del empleado y el decorador que recibe la informacion desde el componente padre al cual llamamos empleados en el componente hijo, pero en el padre tiene el nombre de empleadosAntiguos -->
+        <app-listado [empleados]="empleadosAntiguos"></app-listado>
+      
+    </div>
+</div>
+
+

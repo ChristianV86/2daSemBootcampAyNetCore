@@ -1,6 +1,7 @@
 .container-principal {
+    background-color: #ccc;
     padding: 20px;
-    width: 80%;    
+    width: 940px;    
     margin: 10px auto;  
     display: flex;
     flex-direction: column;
@@ -19,6 +20,7 @@
         margin: 5px;
     }
     p {
+        color: red;
         text-align: left;
         margin: 5px;
     }

@@ -1,19 +1,36 @@
 <div class="container-listado">
-    <p>Este contenido pertenece al componente <strong>listado.component.ts</strong></p>
+    <p>Este es un componente hijo del componente <strong>empleado.component.ts</strong></p>
 
     <h1>Listado de Empleados</h1>
+    <div class="container-directiva-ngIf_ngTemplate">
+        <p>
+            El contenido de este recuadro está manejado con directivas ng if y ng template.
+        </p>
+        <div *ngIf="etiquetaEliminado; else noEliminado">
+            <h3>Este fue el Obj eliminado</h3>
+            <span class="empEliminado">{{etiquetaEliminado | titlecase}}</span>
+        </div>
+        
+        <ng-template #noEliminado>
+            <h3>No se ha Eliminado ningún Objeto</h3>
+        </ng-template>
+    </div>
+    
 
-    <ul>
-        <li *ngFor="let emp of empleados">
-            <h3>Nombre Empleado</h3>
-            <h4>
-                {{emp.nombres}} {{emp.apellidos}}
-            </h4>
-            <h3>Dirección</h3>
-            <h4>{{emp.direccion.tipoVia}} {{emp.direccion.numeroVia}} # {{emp.direccion.numeroCasa}} / Barrio: {{emp.direccion.barrio}} Ciudad: {{emp.direccion.ciudad}}</h4>
-            <h3>Sueldo</h3>
-            <h4>${{emp.sueldo}}</h4>
-        </li>
+    <ul> 
+        <div class="container-directiva-ngFor">
+            <p>
+                El contenido de este recuadro fue llenado con la directiva ng for. Tambien se usaron pipes para darle formato a las variables, las cuales fueron llenadas con interpolación.
+            </p>
+            <li *ngFor="let emp of empleados">            
+                <h4>{{emp.nombres | titlecase}} {{emp.apellidos | titlecase}}</h4>            
+                <h4>{{emp.direccion | uppercase}} </h4>            
+                <h4>{{emp.sueldo | currency}}</h4>            
+                <hr>
+            </li>
+        </div>       
+        
+        <button (click)="borrar()">Delete Obj</button>
     </ul>
 </div>
 
