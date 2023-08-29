@@ -1,18 +1,19 @@
 <div class="container-listado">
     <p>Este es un componente hijo del componente <strong>empleado.component.ts</strong></p>
 
-    <h1>Listado de Empleados</h1>
+    <h1>{{titulo}}</h1>
+
     <div class="container-directiva-ngIf_ngTemplate">
         <p>
             El contenido de este recuadro está manejado con directivas ng if y ng template.
         </p>
         <div *ngIf="etiquetaEliminado; else noEliminado">
-            <h3>Este fue el Obj eliminado</h3>
+            <h3>Este empleado eliminado</h3>
             <span class="empEliminado">{{etiquetaEliminado | titlecase}}</span>
         </div>
         
         <ng-template #noEliminado>
-            <h3>No se ha Eliminado ningún Objeto</h3>
+            <h3>No se ha Eliminado ningún empleado</h3>
         </ng-template>
     </div>
     
@@ -21,16 +22,16 @@
         <div class="container-directiva-ngFor">
             <p>
                 El contenido de este recuadro fue llenado con la directiva ng for. Tambien se usaron pipes para darle formato a las variables, las cuales fueron llenadas con interpolación.
-            </p>
+            </p>           
+            
             <li *ngFor="let emp of empleados">            
                 <h4>{{emp.nombres | titlecase}} {{emp.apellidos | titlecase}}</h4>            
                 <h4>{{emp.direccion | uppercase}} </h4>            
-                <h4>{{emp.sueldo | currency}}</h4>            
+                <h4>{{emp.sueldo | currency}}</h4>
+                <button (click)="borrar()">Eliminar</button>            
                 <hr>
             </li>
-        </div>       
-        
-        <button (click)="borrar()">Delete Obj</button>
+        </div>   
     </ul>
 </div>
 

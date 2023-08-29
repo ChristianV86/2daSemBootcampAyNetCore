@@ -12,11 +12,14 @@ export class ListadoComponent {
   @Input()//decorador que permite recibir informacion de otro componente padre, es decir, convierte el componente en hijo. En este caso empleados ya no va a recibir la informacion desde el componente padre empleado.component.ts
   empleados:IEmpleado [] = [];
 
+  @Input()
+  titulo:string='';
+
   borrar(){
     //console.log("Botón funciona");
-    const objEliminado =  this.empleados.shift();
-    if(objEliminado !== undefined){
-      this.etiquetaEliminado = objEliminado?.nombres +' '+ objEliminado?.apellidos;
+    const EmpleadoEliminado =  this.empleados.shift();
+    if(EmpleadoEliminado !== undefined){
+      this.etiquetaEliminado = EmpleadoEliminado?.nombres +' '+ EmpleadoEliminado?.apellidos;
     }
     else {
       this.etiquetaEliminado='';
